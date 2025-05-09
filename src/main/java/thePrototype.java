@@ -15,7 +15,29 @@ public class thePrototype {
         for (int i = 1; i < 50; i++) {
             System.out.println();
         }
-        // tbc
+
+        System.out.println("User 2, guess the number");
+        int guess = Integer.parseInt(scan.nextLine());
+
+        while (guess < location) {
+            System.out.println(guess + " is too low.");
+            System.out.println("What is your next guess?");
+            guess = Integer.parseInt(scan.nextLine());
+
+        } while (guess > location) {
+            System.out.println(guess + " is too high.");
+            System.out.println("What is your next guess?");
+            guess = Integer.parseInt(scan.nextLine());
+
+        } if (guess == location) {
+            System.out.println("You guessed the number!");
+        }
+    }
+}
+
+
+
+
 
 
 
