@@ -7,9 +7,10 @@ public class main {
         Input speed = new Input();
         speed.askForNumber("Please give a number:");
 
-    }
+        Input velocity = new Input();
+        int result = velocity.askForNumberInRange("Enter a number between 0 and 100:", 0, 100);
 
-        Velocity velocity = new Velocity();
+    }
 }
 
 /* Objectives:
