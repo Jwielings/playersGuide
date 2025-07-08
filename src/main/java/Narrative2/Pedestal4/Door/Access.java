@@ -38,7 +38,7 @@ public class Access {
 
             }
 
-            if (!hasLowercase || !hasUpperCase || !hasNumber) {
+            if (!hasLowercase || !hasUpperCase || !hasNumber || illegalCharacter) {
                 System.out.println("Please re-enter a password that contains at least 1 lower and uppercase letter," +
                         " and a number. Make sure it is between 6 and 13 characters long!");
                 makePassword();
