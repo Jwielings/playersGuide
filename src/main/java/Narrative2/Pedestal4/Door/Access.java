@@ -34,6 +34,8 @@ public class Access {
                 if (Character.isUpperCase(ch)) hasUpperCase = true;
                 if (Character.isLowerCase(ch)) hasLowercase = true;
                 if (Character.isDigit(ch)) hasNumber = true;
+                if (ch == '^' || ch == 'T' || ch == 't') illegalCharacter = true;
+
             }
 
             if (!hasLowercase || !hasUpperCase || !hasNumber) {
