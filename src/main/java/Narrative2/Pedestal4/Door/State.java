@@ -5,7 +5,7 @@ import Narrative2.Pedestal4.Door.Exceptions.TheDoorCantDoThat;
 import java.util.Scanner;
 
 public class State {
-    private String input;
+
     private Scanner scanner;
     private stateOfDoor doorState;
     private Access access;
