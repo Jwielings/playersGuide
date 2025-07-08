@@ -45,7 +45,7 @@ public class Access {
                 makePassword();
             }
 
-            if (hasLowercase && hasUpperCase && hasNumber) {
+            if (hasLowercase && hasUpperCase && hasNumber && !illegalCharacter) {
                 System.out.println("Please re-enter the password to verify.");
                 setVerificationPw(scanner.nextLine());
 
