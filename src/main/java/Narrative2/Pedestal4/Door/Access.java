@@ -5,20 +5,17 @@ import java.util.ArrayList;
 
 public class Access {
 
-    private Scanner scanner;
+
     private String tempPw;
     private String verificationPw;
     private String Password;
     private boolean giveAccess = false;
 
-    public Access(Scanner scanner) {
-        this.scanner = scanner;
-    }
 
     public void makePassword() {
 
         System.out.println("Please enter a new password.");
-        setTempPw(scanner.nextLine());
+        setTempPw(Main.scanner.nextLine());
         checkPassword();
     }
 
@@ -26,6 +23,7 @@ public class Access {
         boolean hasUpperCase = false;
         boolean hasLowercase = false;
         boolean hasNumber = false;
+        boolean illegalCharacter = false;
         int minLength = 6;
         int maxLength = 13;
 
@@ -47,7 +45,7 @@ public class Access {
 
             if (hasLowercase && hasUpperCase && hasNumber && !illegalCharacter) {
                 System.out.println("Please re-enter the password to verify.");
-                setVerificationPw(scanner.nextLine());
+                setVerificationPw(Main.scanner.nextLine());
 
                 if (!getVerificationPw().equals(getTempPw())) {
                     System.out.println("Passwords do not match, try again!");
@@ -57,7 +55,7 @@ public class Access {
 
                     setPassword(getVerificationPw());
                     System.out.println("Password set! Would you like to change it? Y/N");
-                    String input = scanner.nextLine();
+                    String input = Main.scanner.nextLine();
                     if (input.contains("y") || input.contains("Y")) {
                         changePassword();
                     } else {
@@ -71,7 +69,7 @@ public class Access {
 
     public void changePassword() {
         System.out.println("Please fill in the current password:");
-        String input = scanner.nextLine();
+        String input = Main.scanner.nextLine();
         if (input.equals(getPassword())) {
             makePassword();
         } else {
@@ -83,14 +81,14 @@ public class Access {
 
         do {
             System.out.println("Please provide your password:");
-            setTempPw(scanner.nextLine());
+            setTempPw(Main.scanner.nextLine());
 
             if (getTempPw().equals(getPassword())) {
                 System.out.println("Great, we can proceed!");
                 giveAccess = true;
             } else {
                 System.out.println("Incorrect password, please retry:");
-                setTempPw(scanner.nextLine());
+                setTempPw(Main.scanner.nextLine());
                 if (getTempPw().equals(getPassword())) {
                     System.out.println("Great, we can proceed!");
                     giveAccess = true;

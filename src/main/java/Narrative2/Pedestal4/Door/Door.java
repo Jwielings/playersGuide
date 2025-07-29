@@ -3,13 +3,11 @@ package Narrative2.Pedestal4.Door;
 import java.util.Scanner;
 
 public class Door {
-    private Access access;
-    private State state;
+    private Access access = new Access();
+    private State state = new State(access);
 
 
-    public Door(Access access, Scanner scanner) throws Exception {
-        this.access = access;
-        this.state = new State(scanner, access);
+    public Door() throws Exception {
         access.makePassword();
         state.firstEncounter();
         access.insertPassword();
